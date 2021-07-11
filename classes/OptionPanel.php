@@ -18,7 +18,7 @@ class OptionPanel extends ViSingleton {
 		echo '
     <style>
     .dashicons-my-ic {
-        background-image: url("' . plugins_url() . '/ViTelefonchy/images/ic.png");
+        background-image: url("' . VI_TELEFONCHY_PLUGIN_ICON . '");
         background-repeat: no-repeat;
         background-position: center; 
     }
@@ -76,8 +76,8 @@ class OptionPanel extends ViSingleton {
 	function telefonchyOptCallback() {
 		if ( isset( $_POST['vi-telefonchy-service-id'], $_POST['vi-telefonchy-webservice'] ) ) {
 			update_option( self::VI_TELEFONCHY_OPTIONS, [
-				self::VI_TELEFONCHY_OPTIONS_service_id => $_POST['vi-telefonchy-service-id'],
-				self::VI_TELEFONCHY_OPTIONS_webservice => $_POST['vi-telefonchy-webservice']
+				self::VI_TELEFONCHY_OPTIONS_service_id => sanitize_text_field( $_POST['vi-telefonchy-service-id'] ),
+				self::VI_TELEFONCHY_OPTIONS_webservice => sanitize_text_field( $_POST['vi-telefonchy-webservice'] )
 			] );
 		}
 		$service = RequestHandler::getService( self::getWebservice(), [ 'service_id' => self::getServiceId() ] );

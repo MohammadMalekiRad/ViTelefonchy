@@ -25,25 +25,27 @@ class RequestHandler extends ViSingleton {
 		return RequestHandler::getInstance()->curlRequest( self::SERVICE_URL, $token, $data );
 	}
 
-	function curlRequest( $url, $token, $data, $post_type = 'GET' ) {
+	/**
+	 * @param $url
+	 * @param $token
+	 * @param $data
+	 *
+	 * @return string
+	 */
+	function curlRequest( $url, $token, $data ): string {
 		$url .= '?';
 		foreach ( $data as $key => $val ):
 			$url .= $key . "=" . $val . "&";
 		endforeach;
-		$curl = curl_init();
-		curl_setopt_array( $curl, array(
-			CURLOPT_URL            => $url,
-			CURLOPT_RETURNTRANSFER => true,
-			CURLOPT_CUSTOMREQUEST  => $post_type,
-			CURLOPT_HTTPHEADER     => [
-				'Webservice-Token: ' . $token
-			],
-		) );
+		$args     = array(
+			'timeout' => '50000',
+			'headers' => array(
+				'Webservice-Token' => $token
+			)
+		);
+		$response = wp_remote_get( $url, $args );
+		$body     = wp_remote_retrieve_body( $response );
 
-		$response = curl_exec( $curl );
-
-		curl_close( $curl );
-
-		return $response;
+		return $body;
 	}
 }
