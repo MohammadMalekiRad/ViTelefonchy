@@ -8,7 +8,7 @@ use ViTelefonchy\classes\OptionPanel;
 
 /**
  * @package ViTelefonchy
- * @version 1.0.3
+ * @version 1.0.5
  */
 
 /*
@@ -16,7 +16,7 @@ Plugin Name: Telefonchy
 Plugin URI: http://mohammadmalekirad.ir/ViTelefonchy
 Description: این افزونه اطلاعات لیست تماس سرویس تلفنچی را در پنل وردپرس شما نمایش می دهد.
 Author: Mohammad MalekiRad
-Version: 1.0.3
+Version: 1.0.5
 Author URI: http://mohammadmalekirad.ir/
 Requires at least: 5.2
 Requires PHP: 7.0

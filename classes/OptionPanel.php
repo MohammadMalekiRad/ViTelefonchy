@@ -30,7 +30,7 @@ class OptionPanel extends ViSingleton {
 		add_menu_page(
 			'تلفنچی',
 			'تلفنچی',
-			'upload_files',
+			'read',
 			'vi-telefonchy',
 			[ $this, 'optionsPanelCallback' ],
 			'dashicons-my-ic'
@@ -39,7 +39,7 @@ class OptionPanel extends ViSingleton {
 		add_submenu_page( 'vi-telefonchy',
 			'تنظیمات',
 			'تنظیمات',
-			'upload_files',
+			'read',
 			'vi-telefonchy-opt',
 			[ $this, 'telefonchyOptCallback' ] );
 	}

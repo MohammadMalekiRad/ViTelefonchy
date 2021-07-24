@@ -3,7 +3,7 @@ Contributors: Mohammad MalekiRad
 Tags: telefonchy, calls, daftareshoma, telefon
 Requires at least: 5.2
 Tested up to: 5.7
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 Requires PHP: 7.0
 License: MIT
 License URI: https://opensource.org/licenses/MIT
@@ -23,6 +23,9 @@ License URI: https://opensource.org/licenses/MIT
 2. &#x202b;سپس پلاگین را از قسمت افزونه های داشبورد خودتان فعال نمایید.
 
 == Changelog ==
+
+= 1.0.5 =
+تغییر در سطح دسترسی به پلاگین
 
 = 1.0.4 =
 * رفع برخی مشکلات
