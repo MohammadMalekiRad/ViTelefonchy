@@ -7,14 +7,13 @@
       "email": "MohammadMalekiRad@pm.me"
     }
   ],
-  "keywords": ["boilerplate", "skeleton"],
+  "keywords": [
+    "boilerplate",
+    "skeleton"
+  ],
   "license": "MIT",
   "require": {
     "php": "^7.2"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^8.0",
-    "friendsofphp/php-cs-fixer": "^2.0"
   },
   "autoload": {
     "psr-4": {

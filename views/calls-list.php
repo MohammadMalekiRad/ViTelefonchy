@@ -39,11 +39,10 @@ if ( ! isset( $data['calls'] ) && ! is_array( $data['calls'] ) ) { ?>
 							break;
 					endswitch;
 					?>
-                    <tr class="<?php echo $tr_class; ?>">
-                        <td><?php echo $call['created_at']; ?></td>
+                    <tr class="<?php echo esc_html($tr_class); ?>">
+                        <td><?php echo esc_html($call['created_at']); ?></td>
                         <td><?php
-							if ( preg_match( '/(\d{3})(\d{3})(\d{4})$/',
-								$call['call_source']['number'], $matches ) ) {
+							if ( preg_match( '/(\d{3})(\d{3})(\d{4})$/', $call['call_source']['number'], $matches ) ) {
 								echo esc_html( $matches[1] . '-' . $matches[2] . '-' . $matches[3] );
 							} else {
 								echo esc_html( $call['call_source']['number'] );
@@ -72,8 +71,7 @@ if ( ! isset( $data['calls'] ) && ! is_array( $data['calls'] ) ) { ?>
 							'total'     => $data['paginator']['total_pages'],
 							'current'   => $data['paginator']['current']
 						) );
-					echo esc_html( " <span>$page_links</span> " );
-					?>
+					?><span><?php echo ($page_links); ?> </span>
                 </ul>
             </nav>
         </div>
